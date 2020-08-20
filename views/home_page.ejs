@@ -1,0 +1,40 @@
+
+
+
+<%- include('./shared/head.ejs') %>
+
+
+<h3>there is <%=result.length%> tweets</h3>
+<button class="btn waves-effect waves-light" ><a href="/addTweet" style="color: white;">Add Tweet</a></button>
+<hr>
+<% if ( error ) { %>
+        <h2>Title fild required minimum 20 character</h2>
+    <!-- <h2><%=error%></h2> -->
+<%}%>
+
+<% if (result.length >0){result.forEach(val=>{%>
+    <div class="data">
+        
+        <span>
+            <p>Title : <%=val.name%></p>
+            <p>Tweet : <%=val.message%></p>
+        </span>
+        <span class="date">
+            <div id="date">
+                <p ><%=val.createdAt%></p>
+            </div>
+            
+        <a  href=<%= `/tweet/${val._id}` %> >See more</a>
+        </span>
+        
+    </div>
+    <hr>
+     %>
+    
+
+<%})}%>
+
+
+  
+</body>
+</html>

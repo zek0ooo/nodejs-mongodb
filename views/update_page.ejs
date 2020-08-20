@@ -1,0 +1,20 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./shared/head.ejs') %>
+<body>
+<form action=<%= `/update_page/${result._id}`%> method="POST">
+  <% if (result){ %>
+    <span>Name : <input name='name' type="text" value="<%= result.name %>"></span> 
+    <span>Message : <input name='message' type="text" value="<%= result.message %>" ></span>
+  <%}%>
+  <a href='/tweet'>All Messages</a>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit </button>
+</form>
+<hr>
+    
+   
+    
+</body>
+</html>
